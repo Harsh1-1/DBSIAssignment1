@@ -8,10 +8,10 @@
 using namespace std;
 
 
-const int NUM_RECORDS 10;
+const int NUM_RECORDS = 10;
 const int MSB_VALUES = 20;
 const int MAIN_MEMEORY_SIZE = 1024;
-const int TOTAL_BITS = 32
+const int TOTAL_BITS = 32;
 
 
 struct record
