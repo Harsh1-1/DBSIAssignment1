@@ -17,7 +17,7 @@ const int TOTAL_BITS = 32
 struct record
 {
 int item;
-char itembinary[MSB_VALUES];
+string itembinary;
 };
 
 struct bucket
@@ -26,7 +26,7 @@ struct bucket
  	vector<record> recordinbucket;  //record to be strored
 	int itemcount;     //no. of items stored till now in bucket, just to calculate no. of free space
 	int localdepth;    //local depth of bucket
-	int ifoverfow       //for checking if this bucket is overflowed // will help in rehashing 0 means no overflow 1 for overflow
+	int ifoverfow;      //for checking if this bucket is overflowed // will help in rehashing 0 means no overflow 1 for overflow
 	int indexofreeslot; // index of next free slot.
 	int max_bucket_size;//max bucket size
 	struct bucket *overflow;  // for a pointer to overflow bucket
@@ -43,7 +43,7 @@ struct hash_table_entry{
 
 };
 
-struct Main_Memory
+struct main_memory
 {
 	vector<hash_table_entry> hte; //collection of hash table entry
 	int Maximum_Size; // max size of mainmemory
