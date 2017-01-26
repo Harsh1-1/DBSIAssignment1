@@ -4,6 +4,7 @@
 #include<stdio.h>
 #include<iostream>
 #include<vector>
+#include<bitset>
 
 using namespace std;
 
@@ -16,8 +17,8 @@ const int TOTAL_BITS = 32;
 
 struct record
 {
-int item;
-string itembinary;
+int data;
+bitset<20> data_bits; //please note data_bits[0] will give lsb and data_bits[19] will give msb, data_bits[18] is 2nd msb 
 };
 
 struct bucket
