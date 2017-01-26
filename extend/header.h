@@ -58,13 +58,14 @@ struct secondary_memory
 	int global_depth;
 	int overflow_pointer;
 	int total_records;
+	int next_free_bucket;
 	
 	vector<hash_table_entry> extendedhte; //extended hash table enteries
 	vector<bucket> bucketfordata;
 	vector<bucket> bucketforoverfow;
 
 
-	secondary_memory(): global_depth(0),overflow_pointer(0),total_records(0),extendedhte(9000),bucketfordata(10000),bucketforoverfow(10000){}
+	secondary_memory(): global_depth(0),overflow_pointer(0),total_records(0),extendedhte(9000),bucketfordata(10000),bucketforoverfow(10000),next_free_bucket(0){}
 };
 
 
