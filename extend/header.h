@@ -12,7 +12,7 @@ using namespace std;
 const int NUM_RECORDS = 10;
 const int MSB_VALUES = 20;
 const int MAIN_MEMEORY_SIZE = 1024;
-const int TOTAL_BITS = 32;
+const int TOTAL_BITS = 20;
 
 
 struct record
@@ -36,7 +36,8 @@ struct bucket
 
 
 struct hash_table_entry{
-	char formsb[MSB_VALUES]; //just for storing the msb value (address enteries) // no .of bytes to be read can be checked via global depth
+	bitset<MSB_VALUES> formsb; //just for storing the msb value (address enteries) // no .of bits to be read can be checked via global depth
+	//char formsb[MSB_VALUES];
 	//int read_bytes_in_formsb; //no. of bits to be read to check
 	int bucket_number;  // bucket number to which this hash table entry is pointing to
 	//bucket b; //bucket to which hash table entry in pointing to 
@@ -59,11 +60,11 @@ struct secondary_memory
 	int total_records;
 	
 	vector<hash_table_entry> extendedhte; //extended hash table enteries
-	vector<bucket> bucketsfordata;
-	vector<bucket> bucketsforoverfow;
+	vector<bucket> bucketfordata;
+	vector<bucket> bucketforoverfow;
 
 
-	secondary_memory(): global_depth(0),overflow_pointer(0),total_records(0),extendedhte(9000),bucketsfordata(10000),bucketsforoverfow(10000){}
+	secondary_memory(): global_depth(0),overflow_pointer(0),total_records(0),extendedhte(9000),bucketfordata(10000),bucketforoverfow(10000){}
 };
 
 
