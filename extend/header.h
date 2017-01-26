@@ -26,12 +26,12 @@ struct bucket
 
  	vector<record> recordinbucket;  //record to be strored
 	int itemcount;     //no. of items stored till now in bucket, just to calculate no. of free space
-	int localdepth;    //local depth of bucket
+	int local_depth;    //local depth of bucket
 	int ifoverfow;      //for checking if this bucket is overflowed // will help in rehashing 0 means no overflow 1 for overflow
-	int indexofreeslot; // index of next free slot.
+	int indexoffreeslot; // index of next free slot.
 	int max_bucket_size;//max bucket size
 	struct bucket *overflow;  // for a pointer to overflow bucket
-	bucket():recordinbucket(NUM_RECORDS),itemcount(0),localdepth(0),indexofreeslot(0),max_bucket_size(NUM_RECORDS),ifoverfow(0),overflow(NULL){}  //setting records to be 10 via constructor
+	bucket():recordinbucket(NUM_RECORDS),itemcount(0),localdepth(0),indexoffreeslot(0),max_bucket_size(NUM_RECORDS),ifoverfow(0),overflow(NULL){}  //setting records to be 10 via constructor
 };
 
 
